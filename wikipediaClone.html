@@ -2,27 +2,93 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikipediaClone</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="wikipediaClone.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="wikipediaClone.js" defer></script>
 </head>
 
 <body>
     <div class="main-container">
-        <div class="wiki-search-header text-center">
-            <img class="wiki-logo" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/wiki-logo-img.png" />
-            <br />
-            <input placeholder="Type a keyword and press Enter to search" type="search" class="search-input w-100" id="searchInput" />
+        <div class="wiki-header">
+            <h1 class="wiki-title">WikipediaClone</h1>
+            <p class="wiki-subtitle">The Free Encyclopedia</p>
         </div>
-        <div class="d-none" id="spinner">
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
+        
+        <div class="search-bar-container">
+            <div class="input-group">
+                <input placeholder="Search WikipediaClone" type="search" class="form-control search-input" id="searchInput" aria-label="Search Wikipedia" role="searchbox" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary search-button" id="searchButton" type="button">Search</button>
                 </div>
             </div>
         </div>
-        <div class="search-results" id="searchResults"></div>
+
+        <div class="content-wrapper">
+            <div class="left-column">
+                <div class="wiki-box">
+                    <h2 class="section-header">From today's featured article</h2>
+                    <div class="section-content">
+                        <p><b>Wikipedia</b> is a free online encyclopedia that anyone can edit. It was launched on January 15, 2001, by Jimmy Wales and Larry Sanger. Wikipedia has grown to become one of the most visited websites on the internet, with millions of articles in hundreds of languages. The content is written collaboratively by volunteers around the world, and almost all of its articles can be edited by anyone with access to the site. Wikipedia's articles cover an enormous range of topics and are freely available to anyone with an internet connection.</p>
+                    </div>
+                </div>
+
+                <div class="wiki-box">
+                    <h2 class="section-header">Did you know ...</h2>
+                    <div class="section-content">
+                        <ul class="dyk-list">
+                            <li>... that the <b>English Wikipedia</b> has over 6 million articles?</li>
+                            <li>... that Wikipedia is available in more than 300 languages?</li>
+                            <li>... that Wikipedia is hosted by the <b>Wikimedia Foundation</b>, a non-profit organization?</li>
+                            <li>... that the name "Wikipedia" is a portmanteau of "wiki" and "encyclopedia"?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="wiki-box">
+                    <h2 class="section-header">In the news</h2>
+                    <div class="section-content">
+                        <ul class="news-list">
+                            <li>Technology advances in artificial intelligence continue to shape the future</li>
+                            <li>Climate change discussions at international summit</li>
+                            <li>New archaeological discoveries reveal ancient civilizations</li>
+                            <li>Space exploration reaches new milestones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wiki-box">
+                    <h2 class="section-header">On this day</h2>
+                    <div class="section-content">
+                        <p class="on-this-day-date"><b>November 24</b></p>
+                        <ul class="news-list">
+                            <li><b>1859</b> – Charles Darwin published <i>On the Origin of Species</i></li>
+                            <li><b>1963</b> – Lee Harvey Oswald was shot by Jack Ruby</li>
+                            <li><b>1971</b> – D. B. Cooper hijacked a plane and parachuted away</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-results-section" id="searchResultsSection" style="display: none;">
+            <h2 class="section-header">Search Results</h2>
+            <div class="d-none" id="spinner">
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
     </div>
 </body>
 
